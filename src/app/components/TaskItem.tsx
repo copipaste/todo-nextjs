@@ -1,8 +1,9 @@
 // components/TaskItem.tsx
 "use client";
 import { Trash2, CheckCircle2 } from "lucide-react";
+import { Task } from "./interface";
 
-export default function TaskItem({ task, onChange }: { task: any; onChange: () => void }) {
+export default function TaskItem({ task, onChange }: { task: Task; onChange: () => void }) {
   async function toggleComplete() {
     await fetch("/api/tasks", {
       method: "PUT",
